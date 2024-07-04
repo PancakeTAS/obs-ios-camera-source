@@ -207,7 +207,7 @@ bool ffmpeg_decode_audio(struct ffmpeg_decode *decode,
     audio->samples_per_sec = decode->frame->sample_rate;
     audio->format = convert_sample_format(decode->frame->format);
     audio->speakers =
-    convert_speaker_layout((uint8_t)decode->decoder->channels);
+    convert_speaker_layout((uint8_t)decode->decoder->ch_layout.nb_channels);
 
     audio->frames = decode->frame->nb_samples;
 
